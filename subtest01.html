@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jesper Stein Sandal">
+    <script>
+        var seltext;
+        var boxtext;
+        function editlistener() {
+            console.log("Function editlistener called");
+            var thebutton = document.getElementById("mybutton");
+            //
+            var sel = window.getSelection();
+            seltext = sel.toString();
+            boxtext = document.getElementById("mytextbox").value;
+            //console.log(sel);
+            //thebutton.addEventListener("onclick", unisub(sel));
+            //unisub(sel);
+        }
+        /*function unisub(txt) {
+            console.log("Function unisub called");
+            var thebox = document.getElementById("mytextbox");
+            thebox.value = txt;
+        }*/
+        function testsub() {
+            console.log("Knap klikket!");
+            //console.log(testsel);
+            document.getElementById("mytextbox").value = "Fixed " + seltext + " in " + boxtext;
+        }
+    </script>
+
+</head>
+<body>
+    <form>
+        <input type="text" id="mytextbox" onselect="editlistener()">
+        <input type="button" value="H₂O" id="mybutton" onclick="testsub()">
+    </form>
+    </form>
+</body>
+</html>
