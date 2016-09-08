@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test af tekstmarkering</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jesper Stein Sandal">
+        <script>
+            function erstat() {
+                var sel = window.getSelection();
+                console.log("Rangecount: " + sel.rangeCount);
+                var seltext = sel.getRangeAt(0);
+                console.log("seltext: " + seltext);
+                seltext = seltext + "ALIVE";
+                var alltext = document.getElementById("inputfelt").value;
+                alltext = alltext + seltext;
+                //document.getElementById("inputfelt").value = alltext;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="inputfelt">
+            <input type="button" onclick="erstat()" value="Test">
+        </form>
+    </body>
+</html>
